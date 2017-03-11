@@ -1,4 +1,4 @@
-const myLib = require('./myLib');
+import myLib from './myLib';
 
 const main = () => {
   const h1 = document.getElementsByTagName('h1')[0];
