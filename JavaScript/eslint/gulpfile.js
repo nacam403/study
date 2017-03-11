@@ -2,7 +2,6 @@
 
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
-const plumber = require('gulp-plumber');
 const eslint = require('gulp-eslint');
 
 const jsPath = './src/js/**/*.js';
