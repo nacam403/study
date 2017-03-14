@@ -12,6 +12,9 @@ $(() => {
   // ボタンをクリックすると現在時刻が流れてくるストリーム。
   const buttonAStream = $('#buttonA').asEventStream('click').map(() => new Date().getTime());
   buttonAStream.onValue((value) => console.log(`buttonA: ${value}`));
+  // ストリームに値が流れてくるたびに、$textC.text(値)が実行される。
+  const $textC = $('#textC');
+  buttonAStream.onValue($textC, 'text');
 
   // flatMapを使うと、ストリームに値が流れてくるたびに、値に応じて新しいストリームが作られる。
   buttonAStream.flatMap((value) => Bacon.fromArray([value]))
