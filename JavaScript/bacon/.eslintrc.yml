@@ -9,7 +9,7 @@ parserOptions:
 rules:
   # Possible Errors
   no-console: # consoleを使用したら・・・
-    - warn # デフォルトはerrorだけどwarnに緩める。デバッグ用に一時的に使いたい時もあるから。
+    - off # Bacon.jsを理解するために、consoleは積極的に使ってよしとする。
 
   # Best Practices
   block-scoped-var: # ある変数が、それが宣言されたブロックの外側で使われたら・・・

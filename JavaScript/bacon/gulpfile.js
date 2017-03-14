@@ -12,7 +12,7 @@ const jsDir = 'src/js';
 const jsFilePattern = 'src/js/**/*.js';
 const entryJs = 'src/js/main.js';
 
-const destinationDir = 'dest'; 
+const destinationDir = 'dest';
 const bundledJs = 'index.js';
 
 gulp.task('default', ['watch']);
