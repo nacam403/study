@@ -29,4 +29,12 @@ $(() => {
   const buttonBStream = $('#buttonB').asEventStream('click');
   const sampledStream = buttonAProperty.sampledBy(buttonBStream);
   sampledStream.log('sampledStream');
+
+  // buttonAStreamに流れてきた最新の値を含んだオブジェクトを保持するプロパティ。
+  const combinedProperty = Bacon.combineTemplate({
+    a: buttonAStream,
+    constant: 100
+  });
+  combinedProperty.map(JSON.stringify)
+    .assign($('#textD'), 'text');
 });
