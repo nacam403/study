@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="ja">
+    <meta charset="UTF-8">
+    <title>Bacon.js Study</title>
+</head>
+<body>
+    <h1 id="header">Bacon.js Study</h1>
+    <p><button id="buttonA">A</button></p>
+    <p id="textA"></p>
+
+    <p><button id="buttonB">B</button></p>
+
+    <p id="textC">(textC)</p>
+
+    <p><button id="buttonD">D</button></p>
+    <p id="textD">(textD)</p>
+
+    <!-- jQueryはscriptタグで読み込む。jsファイルにてimportした場合、Baconが提供する$.asEventStream()が使えないから。 -->
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../dest/index.js"></script>
+</body>
+</html>
