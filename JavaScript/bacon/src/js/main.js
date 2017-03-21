@@ -37,4 +37,15 @@ $(() => {
   });
   combinedProperty.map(JSON.stringify)
     .assign($('#textD'), 'text');
+
+  // buttonAStreamまたはbuttonBStreamにイベントが流れてくると、各ストリームの値が(a, b)として渡ってくる。
+  // 初回は、各ストリームに1回以上イベントが流れたときのはず。
+  Bacon.onValues(
+    buttonAStream,
+    buttonBStream,
+    (a, b) => {
+      console.log(`a: ${a}`);
+      console.log(`b: ${b}`);
+    }
+  );
 });
