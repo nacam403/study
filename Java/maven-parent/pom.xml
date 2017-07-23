@@ -38,6 +38,16 @@
         <artifactId>cxf-rt-transports-http-hc</artifactId>
         <version>${cxf.version}</version>
       </dependency>
+      <dependency>
+        <groupId>commons-dbutils</groupId>
+        <artifactId>commons-dbutils</artifactId>
+        <version>1.6</version>
+      </dependency>
+      <dependency>
+        <groupId>org.xerial</groupId>
+        <artifactId>sqlite-jdbc</artifactId>
+        <version>3.19.3</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
