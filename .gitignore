@@ -6,3 +6,5 @@ dest
 .project
 .classpath
 target
+
+.idea
