@@ -1,0 +1,14 @@
+{
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.renderControlCharacters": true,
+  "editor.renderIndentGuides": true,
+
+  "workbench.colorTheme": "Default Light+",
+  "workbench.iconTheme": "vs-seti",
+
+  //"git.path": "D:\\Application\\Git\\bin\\git.exe",
+
+  "javascript.validate.enable": false
+}
