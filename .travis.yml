@@ -2,4 +2,4 @@ language: scala
 scala:
   - 2.12.13
 script:
-  - cd scala/hell-world && sbt ++$TRAVIS_SCALA_VERSION test
+  - cd scala/hello-world && sbt ++$TRAVIS_SCALA_VERSION test
