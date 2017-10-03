@@ -1,0 +1,42 @@
+{
+  "name": "npm-script-study",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf ./dist && mkdirp ./dist",
+    "lint:js": "eslint --fix ./src/js/**/*.js",
+    "prebuild:js": "npm run lint:js",
+    "build:js": "browserify ./src/js/main.js --debug --outfile ./src/assets/bundle.js",
+    "watch:js": "watchify ./src/js/main.js --verbose --debug --outfile ./src/assets/bundle.js",
+    "compress:js": "uglifyjs ./src/assets/bundle.js --compress --mangle --output ./dist/bundle.js",
+    "release:js": "run-s build:js compress:js",
+    "build:css": "node-sass --source-map-embed ./src/scss/main.scss ./src/assets/bundle.css",
+    "watch:css": "node-sass --watch --source-map-embed ./src/scss/main.scss ./src/assets/bundle.css",
+    "compress:css": "cleancss ./src/assets/bundle.css --output ./dist/bundle.css",
+    "release:css": "run-s build:css compress:css",
+    "watch:server": "browser-sync start --server './' --startPath './src/assets' reload --files='./src/assets/**/*'",
+    "release:copy": "cpx './src/assets/**/*' ./dist",
+    "start": "run-p watch:*",
+    "release": "npm-run-all clean release:copy -p release:js release:css"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.13",
+    "browserify": "^14.4.0",
+    "clean-css-cli": "^4.1.10",
+    "cpx": "^1.5.0",
+    "eslint": "^4.8.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "rimraf": "^2.6.2",
+    "uglify-js": "^3.1.3",
+    "watchify": "^3.9.0"
+  }
+}
