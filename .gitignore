@@ -5,6 +5,9 @@ dest/
 target/
 logs/
 
+bundle*.js
+bundle*.css
+
 *.apk
 
 .settings/
