@@ -44,7 +44,7 @@ def forward(network, x):
     y = identity_function(a3)
     return y
 
-network = init_network()
-x = np.array([1.0, 0.5])
-y = forward(network, x)
-print(y)
+# network = init_network()
+# x = np.array([1.0, 0.5])
+# y = forward(network, x)
+# print(y)
