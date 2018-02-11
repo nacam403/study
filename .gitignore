@@ -15,3 +15,8 @@ bundle*.css
 .classpath
 
 .idea/
+
+*.gz
+
+# python
+__pycache__
