@@ -2,6 +2,9 @@ node_modules/
 dist/
 dest/
 
+package-lock.json
+yarn-lock.json
+
 target/
 logs/
 
