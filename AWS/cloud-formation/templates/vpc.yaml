@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Hello CFn
+
+Parameters:
+  VpcName:
+    Type: String
+    AllowedValues:
+      - blue
+      - green
+
+Mappings:
+  VpcMap:
+    blue:
+      Cidr: 10.0.0.0/16
+      PublicSubnet1aCidr: 10.0.0.0/24
+      PublicSubnet1cCidr: 10.0.1.0/24
+      PrivateSubnet1aCidr: 10.0.4.0/24
+      PrivateSubnet1cCidr: 10.0.5.0/24
+    green:
+      Cidr: 10.1.0.0/16
+      PublicSubnet1aCidr: 10.1.0.0/24
+      PublicSubnet1cCidr: 10.1.1.0/24
+      PrivateSubnet1aCidr: 10.1.4.0/24
+      PrivateSubnet1cCidr: 10.1.5.0/24
+
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !FindInMap [VpcMap, !Ref VpcName, Cidr]
+      EnableDnsHostnames: true
+
+  IGW:
+    Type: AWS::EC2::InternetGateway
+
+  IGWAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      InternetGatewayId: !Ref IGW
+      VpcId: !Ref VPC
