@@ -38,3 +38,9 @@ Resources:
     Properties:
       InternetGatewayId: !Ref IGW
       VpcId: !Ref VPC
+
+Outputs:
+  vpcId:
+    Value: !Ref VPC
+    Export:
+      Name: !Sub ${VpcName}-VpcId
