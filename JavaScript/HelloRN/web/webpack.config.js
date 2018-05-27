@@ -14,7 +14,6 @@ const babelLoaderConfiguration = {
     loader: 'babel-loader',
     options: {
       cacheDirectory: true,
-      plugins: ['react-native-web'],
       presets: ['react-native']
     }
   }
@@ -32,6 +31,12 @@ module.exports = {
     rules: [
       babelLoaderConfiguration,
     ]
+  },
+
+  resolve: {
+    alias: {
+      'react-native': 'react-native-web'
+    }
   },
 
 }
