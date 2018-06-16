@@ -8,7 +8,8 @@ const babelLoaderConfiguration = {
   include: [
     path.resolve(appDirectory, 'index.web.js'),
     path.resolve(appDirectory, 'src'),
-    path.resolve(appDirectory, 'node_modules/react-native-uncompiled')
+    path.resolve(appDirectory, 'node_modules/react-native-uncompiled'),
+    path.resolve(appDirectory, 'node_modules/react-native-calendars')
   ],
   use: {
     loader: 'babel-loader',
@@ -18,6 +19,16 @@ const babelLoaderConfiguration = {
     }
   }
 };
+
+const imageLoaderConfiguration = {
+  test: /\.(gif|jpe?g|png|svg)$/,
+  use: {
+    loader: 'url-loader',
+    options: {
+      name: '[name].[ext]',
+    },
+  },
+}
 
 module.exports = {
   entry: path.resolve(appDirectory, 'index.web.js'),
@@ -30,6 +41,7 @@ module.exports = {
   module: {
     rules: [
       babelLoaderConfiguration,
+      imageLoaderConfiguration,
     ]
   },
 

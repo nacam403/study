@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -25,15 +26,25 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <Calendar
+          style={{
+            borderWidth: 1,
+          }}
+          monthFormat={'yyyy MM'}
+          onDayPress={({year, month, day}) => {console.log(`${year}年 ${month}月 ${day}日がクリックされた。`)}}
+          onMonthChange={({year, month}) => {console.log(`${year}年 ${month}月に移動した。`)}}
+
+          // 特定の日付に印をつけてみる。
+          markedDates={{
+            '2018-06-05': {selected: true},
+            '2018-06-06': {marked: true},
+          }}
+
+          // renderArrowを指定すると、月を移動するボタンに指定できる。
+          // 引数directionは、'left'または'right'。
+          // この例では、Textで '<' と '>' を表示させた。
+          renderArrow={(direction) => (<Text>{direction === 'left' ? '<' : '>'}</Text>)}
+        />
       </View>
     );
   }
