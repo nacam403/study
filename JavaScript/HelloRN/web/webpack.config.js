@@ -9,7 +9,14 @@ const babelLoaderConfiguration = {
     path.resolve(appDirectory, 'index.web.js'),
     path.resolve(appDirectory, 'src'),
     path.resolve(appDirectory, 'node_modules/react-native-uncompiled'),
-    path.resolve(appDirectory, 'node_modules/react-native-calendars')
+    path.resolve(appDirectory, 'node_modules/react-native-calendars'),
+    path.resolve(appDirectory, 'node_modules/react-native-gifted-chat'),
+    path.resolve(appDirectory, 'node_modules/@expo'),
+    path.resolve(appDirectory, 'node_modules/react-native-lightbox'),
+    path.resolve(appDirectory, 'node_modules/react-native-invertible-scroll-view'),
+    path.resolve(appDirectory, 'node_modules/react-native-scrollable-mixin'),
+    path.resolve(appDirectory, 'node_modules/react-clone-referenced-element'),
+    path.resolve(appDirectory, 'node_modules/react-native-parsed-text'),
   ],
   use: {
     loader: 'babel-loader',
@@ -48,7 +55,12 @@ module.exports = {
   resolve: {
     alias: {
       'react-native': 'react-native-web'
-    }
+    },
+    extensions: [
+      '.android.js',
+      '.web.js',
+      '.js',
+    ],
   },
 
 }
