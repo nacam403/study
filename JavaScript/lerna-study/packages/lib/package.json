@@ -1,0 +1,10 @@
+{
+  "name": "lib",
+  "version": "1.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "flow-bin": "^0.75.0"
+  }
+}
