@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "flow-bin": "^0.75.0",
     "lerna": "^2.11.0"
   }
 }
