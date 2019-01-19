@@ -1,5 +1,0 @@
-language: scala
-scala:
-  - 2.12.3
-script:
-  - cd scala/hello-world && sbt ++$TRAVIS_SCALA_VERSION test
